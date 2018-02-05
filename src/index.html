@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title>MinhasFormulas</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.css" integrity="sha384-VEnyslhHLHiYPca9KFkBB3CMeslnM9CzwjxsEbZTeA21JBm7tdLwKoZmCt3cZTYD" crossorigin="anonymous">
+</head>
+<body>
+
+	<div class="container pt-5">
+		<form method="get" action="search" class="row search-form" id="searchForm">
+			<div class="form-group col-md-9 offset-md-1">
+				<input type="text" name="query" id="query" class="form-control form-control-lg w-100"  placeholder="Digite aqui a fórmula que deseja achar (ex.: bhaskara)" autofocus autocomplete="off">
+			</div>
+
+			<div class="col-md-2">
+				<button type="button" class="btn btn-outline-success btn-lg col-5" data-toggle="modal" data-target="#filter" title="Opções"><i class="fas fa-bars"></i></button>
+				<button type="button" class="btn btn-outline-danger btn-lg col-5 open-fav" data-toggle="modal" data-target="#favs" title="Fórmulas favoritas"><i class="fas fa-heart"></i></button>
+			</div>
+		</form>
+
+		<div class="pt-3 text-center" id="nothing" style="display: none">
+			<i class="fas fa-exclamation-circle fa-2x text-danger"></i>
+			<h4 class="pt-3">Nenhuma fórmula encontrada.</h4>
+			<h5 class="font-weight-light ">Tem certeza que escreveu certo?</h5>
+			<button type="button" class="btn btn-outline-dark pt-2" id="tryAgain">Tentar novamente</button>
+		</div>
+
+		<div class="pt-3" id="selected">
+		</div>
+
+		<div class="row pt-5">
+			<div id="result" class="list-group w-100 offset-sm-1">	
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="filter" tabindex="-1" role="dialog" aria-labelledby="filter" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Opções de filtro</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="subject" class="col-form-label">Materias</label>
+
+							<div class="checkboxes">
+								<input type="checkbox" id="subject[]" value="1" checked> Física
+								<input type="checkbox" id="subject[]" value="2" checked> Matemática
+								<input type="checkbox" id="subject[]" value="3" checked> Química
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-danger" data-dismiss="modal" id="setDefault"><i class="fas fa-arrow-alt-circle-left"></i> Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="favs" tabindex="-1" role="dialog" aria-labelledby="favs" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Minhas fórmulas</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+
+				<div class="modal-body">
+					<h2 class="text-center" id="sadf" style="display: none"><i class="far fa-frown"></i> <br> Você ainda não favoritou nenhuma fórmula</h2>
+
+					<div class="list-group" id="fav-list">
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-outline-info" data-dismiss="modal"><i class="fas fa-arrow-alt-circle-left"></i> Voltar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0-beta1/katex.min.js" integrity="sha384-O4hpKqcplNCe+jLuBVEXC10Rn1QEqAmX98lKAIFBEDxZI0a+6Z2w2n8AEtQbR4CD" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>

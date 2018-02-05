@@ -1,0 +1,34 @@
+.fav {
+	color: inherit;
+}
+
+.fav::before {
+	content: "\f004";
+	font-family: "Font Awesome 5 Free";
+}
+
+.fav:hover,
+.is-fav {
+	color: #dc3545 !important;
+	font-weight: 900;
+	text-decoration: none;
+}
+
+.return {
+	color: inherit;
+}
+
+.return::before {
+	content: "\f359";
+	font-family: "Font Awesome 5 Free";
+}
+
+.return:hover {
+	font-weight: 900;
+	color: #17a2b8 !important;
+	text-decoration: none;
+}
+
+.refresh:hover {
+	text-decoration: none;
+}
